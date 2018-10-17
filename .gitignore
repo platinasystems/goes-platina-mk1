@@ -1,0 +1,10 @@
+*~
+*#*#
+*.orig
+*.patch
+*.rej
+*.so
+*.swp
+*.test
+*.zip
+/goes-platina-mk1
