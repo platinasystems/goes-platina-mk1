@@ -2,10 +2,30 @@
 // Use of this source code is governed by the GPL-2 license described in the
 // LICENSE file.
 
-// This is Platina's Mk1 TOR; build it with,
+// This is Platina's Mk1 TOR.
+//
+// To build this source you'll first need to extract the driver plugin from an
+// existing program binary.
+//
+//	unzip goes-platina-mk1 fe1.so
+//	zip fe1.zip fe1.so
+//
+// Or with NDA access to the plugin source, build it with,
+//
+//	cd fe1
+//	go build -ldflags "-X 'main.Version=$(git describe)'" -buildmode=plugin
+//	zip ../fe1.zip fe1.so
+//	cd ..
+//
+// Then build the program and append the zipped plugin.
+//
 //	go build -ldflags "-X 'main.Version=$(git describe)'"
 //	cat fe1.zip >> goes-platina-mk1
 //	zip -q -A goes-platina-mk1
+//
+// With NDA access to the imported plugin source, you may test with,
+//	go test -c
+//	sudo GOPATH=$GOPATH ./goes-platina-mk1.test [-test.help]
 package main
 
 import (

@@ -5,9 +5,6 @@
 // This is Platina's fe1 dynamic library; build it with,
 //	go build -ldflags "-X 'main.Version=$(git describe)'" -buildmode=plugin
 //	zip ../fe1.zip fe1.so
-// Test with,
-//	go test -c
-//	sudo GOPATH=$GOPATH ./fe1.test [-test.help]
 package main
 
 import (
