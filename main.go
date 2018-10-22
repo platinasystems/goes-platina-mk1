@@ -35,9 +35,9 @@ import (
 
 	"github.com/platinasystems/go/goes"
 	"github.com/platinasystems/go/platform/mk1"
-	"github.com/platinasystems/go/vnet"
-	fe1 "github.com/platinasystems/go/vnet/devices/ethernet/switch/fe1"
-	platform "github.com/platinasystems/go/vnet/platforms/fe1"
+	"github.com/platinasystems/vnet"
+	fe1 "github.com/platinasystems/vnet/devices/ethernet/switch/fe1"
+	platform "github.com/platinasystems/vnet/platforms/fe1"
 )
 
 const (

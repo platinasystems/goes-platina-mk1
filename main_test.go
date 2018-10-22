@@ -12,7 +12,7 @@ import (
 	"github.com/platinasystems/fe1"
 	"github.com/platinasystems/go/main/goes-platina-mk1/test"
 	"github.com/platinasystems/go/platform/mk1"
-	vnetFe1 "github.com/platinasystems/go/vnet/devices/ethernet/switch/fe1"
+	vnetFe1 "github.com/platinasystems/vnet/devices/ethernet/switch/fe1"
 )
 
 func Test(t *testing.T) {
