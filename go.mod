@@ -1,4 +1,4 @@
-module github.com/platinasystems/goes-machines/goes-platina-mk1
+module github.com/platinasystems/goes-platina-mk1
 
 require (
 	github.com/Microsoft/go-winio v0.4.11 // indirect
