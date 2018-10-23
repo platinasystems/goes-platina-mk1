@@ -29,8 +29,6 @@
 package main
 
 import (
-	"fmt"
-	"os"
 	"plugin"
 
 	"github.com/platinasystems/go/goes"
@@ -41,7 +39,6 @@ import (
 )
 
 const (
-	Machine = "goes-platina-mk1"
 	ldflags = `-ldflags "-X 'main.Version=$(git describe)'"`
 	version = "FIXME with, go build " + ldflags
 )
@@ -79,7 +76,7 @@ func main() {
 		if len(c.versions) == 0 {
 			f := c.symbol("Versions").(func() map[string]string)
 			c.versions = f()
-			c.versions[Machine] = Version
+			c.versions["goes-platina-mk1"] = Version
 		}
 		return c.versions
 	}
@@ -97,10 +94,7 @@ func main() {
 		}
 		c.ap(v, p)
 	}
-	if err := mk1.Start(Machine); err != nil {
-		fmt.Fprintln(os.Stderr, err)
-		os.Exit(1)
-	}
+	mk1.Main()
 }
 
 func (c *cache) symbol(name string) plugin.Symbol {

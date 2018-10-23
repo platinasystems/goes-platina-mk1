@@ -44,6 +44,8 @@ github.com/platinasystems/firmware-fe1a v0.0.0-20181017185739-2d160f42cff1 h1:1r
 github.com/platinasystems/firmware-fe1a v0.0.0-20181017185739-2d160f42cff1/go.mod h1:F0KAFwctbk1FB557q7m6atg3aQgyHj9NmAle2KswM6E=
 github.com/platinasystems/go v0.0.0-20181022201609-1db6d19b343d h1:nBFGwGIhD3m1FT8aO4cY2IiQfbQeKaBxKAP4XcO5UT8=
 github.com/platinasystems/go v0.0.0-20181022201609-1db6d19b343d/go.mod h1:J9QG7kZEw0Pw/zyd2ihyOzCOuifkDeEpCaZjYu0atyk=
+github.com/platinasystems/go v0.0.0-20181023181126-ab63e45d9014 h1:Eon5lKAyRb7jfGfLm1Ox/vIa/mxgXmRRgHDxmKfCTYA=
+github.com/platinasystems/go v0.0.0-20181023181126-ab63e45d9014/go.mod h1:J9QG7kZEw0Pw/zyd2ihyOzCOuifkDeEpCaZjYu0atyk=
 github.com/platinasystems/go-redis-server v0.0.0-20170607003434-2aae595273b8 h1:g/xRUhEichcPkHc9od8pSW5nnc/j58VrGS2GKs7YtAM=
 github.com/platinasystems/go-redis-server v0.0.0-20170607003434-2aae595273b8/go.mod h1:/GXF5FQty+9BTtfCsfFuD4/pHf/b2cN3f3Ic0nLagQw=
 github.com/platinasystems/i2c v0.0.0-20181019213407-8214913e67af h1:bHZ3RKuiaglPYzAqoGD2zheO9JIs4OA22CqdxZ6I/mQ=

@@ -5,8 +5,6 @@
 package main
 
 import (
-	"fmt"
-	"os"
 	"testing"
 
 	"github.com/platinasystems/fe1"
@@ -18,10 +16,5 @@ import (
 func Test(t *testing.T) {
 	vnetFe1.AddPlatform = fe1.AddPlatform
 	vnetFe1.Init = fe1.Init
-	test.Suite(Machine, func() {
-		if err := mk1.Start(Machine); err != nil {
-			fmt.Fprintln(os.Stderr, err)
-			os.Exit(1)
-		}
-	}, t)
+	test.Suite(mk1.Main, t)
 }
