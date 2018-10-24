@@ -1,8 +1,16 @@
 module github.com/platinasystems/goes-platina-mk1
 
 require (
+	docker.io/go-docker v1.0.0 // indirect
 	github.com/cavaliercoder/grab v2.0.0+incompatible // indirect
+	github.com/docker/distribution v2.7.0-rc.0.0.20181002220433-1cb4180b1a5b+incompatible // indirect
+	github.com/docker/go-connections v0.4.0 // indirect
+	github.com/docker/go-units v0.3.3 // indirect
+	github.com/gogo/protobuf v1.1.1 // indirect
 	github.com/mattn/go-isatty v0.0.4 // indirect
+	github.com/opencontainers/go-digest v1.0.0-rc1 // indirect
+	github.com/opencontainers/image-spec v1.0.1 // indirect
+	github.com/pkg/errors v0.8.0 // indirect
 	github.com/platinasystems/fe1 v1.1.0
 	github.com/platinasystems/go v0.0.0-20181024011643-c5690056ee61
 	github.com/platinasystems/go-redis-server v0.0.0-20170607003434-2aae595273b8 // indirect

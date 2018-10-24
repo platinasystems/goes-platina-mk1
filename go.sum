@@ -9,6 +9,8 @@ github.com/d2g/dhcp4 v0.0.0-20170904100407-a1d1b6c41b1c/go.mod h1:Ct2BUK8SB0YC1S
 github.com/d2g/dhcp4client v0.0.0-20180622102533-b7a004ff1a09/go.mod h1:j0hNfjhrt2SxUOw55nL0ATM/z4Yt3t2Kd1mW34z5W5s=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
+github.com/docker/distribution v2.6.2+incompatible h1:4FI6af79dfCS/CYb+RRtkSHw3q1L/bnDjG1PcPZtQhM=
+github.com/docker/distribution v2.6.2+incompatible/go.mod h1:J2gT2udsDAN96Uj4KfcMRqY0/ypR+oyYUYmja8H+y+w=
 github.com/docker/distribution v2.7.0-rc.0.0.20181002220433-1cb4180b1a5b+incompatible h1:n4a7qrsSAlu07ALkG84Ve8cmiDA2KDv2Zbf4OpsOcn8=
 github.com/docker/distribution v2.7.0-rc.0.0.20181002220433-1cb4180b1a5b+incompatible/go.mod h1:J2gT2udsDAN96Uj4KfcMRqY0/ypR+oyYUYmja8H+y+w=
 github.com/docker/go-connections v0.4.0 h1:El9xVISelRB7BuFusrZozjnkIM5YnzCViNKohAFqRJQ=
@@ -48,9 +50,11 @@ github.com/platinasystems/elib v1.1.0 h1:r8z1a/Wi9SlTBo9lRWSbl9yV1n0YJ011godG7cb
 github.com/platinasystems/elib v1.1.0/go.mod h1:XZy8etdf41RtMxmxEYArLL7T6QEJ5MPAIeHDqXtPCUU=
 github.com/platinasystems/fe1 v0.0.0-20181022200308-5c0edfcc75d9 h1:9YlNE7sztPBYZPRzJYvAw5N0yH01VIPLDSJcfl3O6Ro=
 github.com/platinasystems/fe1 v0.0.0-20181022200308-5c0edfcc75d9/go.mod h1:RJL/LL9VW0C2eyqe5OZsIDsf8gaQaRikK9uqqBl2ur8=
+github.com/platinasystems/fe1 v1.1.0 h1:YhOv2CtQoFHIcCJKJPYSn73XycbnIJ+feZBkEGA3/RI=
 github.com/platinasystems/fe1 v1.1.0/go.mod h1:JRavZa3J7MBeahy8Zi3GFuDKzATnwZUnY6BdZRw8TJY=
 github.com/platinasystems/firmware-fe1a v0.0.0-20181017185739-2d160f42cff1 h1:1rx0c3jxk6+xjQyRE+hWgiC469tUG6aRo3FQRIH894c=
 github.com/platinasystems/firmware-fe1a v0.0.0-20181017185739-2d160f42cff1/go.mod h1:F0KAFwctbk1FB557q7m6atg3aQgyHj9NmAle2KswM6E=
+github.com/platinasystems/firmware-fe1a v1.1.0 h1:4MW5FHQLIMPDkCWnmn3FZJ8Q3yZ1oSLaPxMq1DuvL6w=
 github.com/platinasystems/firmware-fe1a v1.1.0/go.mod h1:F0KAFwctbk1FB557q7m6atg3aQgyHj9NmAle2KswM6E=
 github.com/platinasystems/go v0.0.0-20181022201609-1db6d19b343d h1:nBFGwGIhD3m1FT8aO4cY2IiQfbQeKaBxKAP4XcO5UT8=
 github.com/platinasystems/go v0.0.0-20181022201609-1db6d19b343d/go.mod h1:J9QG7kZEw0Pw/zyd2ihyOzCOuifkDeEpCaZjYu0atyk=
