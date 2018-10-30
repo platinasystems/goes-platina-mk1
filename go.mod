@@ -11,7 +11,6 @@ require (
 	github.com/opencontainers/go-digest v1.0.0-rc1 // indirect
 	github.com/opencontainers/image-spec v1.0.1 // indirect
 	github.com/pkg/errors v0.8.0 // indirect
-	github.com/platinasystems/fe1 v1.1.0
 	github.com/platinasystems/go v0.0.0-20181024011643-c5690056ee61
 	github.com/platinasystems/go-redis-server v0.0.0-20170607003434-2aae595273b8 // indirect
 	github.com/platinasystems/liner v0.0.0-20170801164932-8dd8fbd0e16d // indirect
@@ -21,5 +20,3 @@ require (
 	github.com/tatsushid/go-fastping v0.0.0-20160109021039-d7bb493dee3e // indirect
 	golang.org/x/net v0.0.0-20181023162649-9b4f9f5ad519 // indirect
 )
-
-replace github.com/platinasystems/go-redis-server => ../go-redis-server
