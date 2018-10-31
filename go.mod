@@ -14,6 +14,7 @@ require (
 	github.com/platinasystems/go v0.0.0-20181024011643-c5690056ee61
 	github.com/platinasystems/go-redis-server v0.0.0-20170607003434-2aae595273b8 // indirect
 	github.com/platinasystems/liner v0.0.0-20170801164932-8dd8fbd0e16d // indirect
+	github.com/platinasystems/log v1.1.0
 	github.com/platinasystems/vnet v1.1.0
 	github.com/ramr/go-reaper v0.0.0-20170814234526-35f6a64e44ff // indirect
 	github.com/satori/go.uuid v1.2.0 // indirect
