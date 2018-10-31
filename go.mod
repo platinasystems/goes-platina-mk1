@@ -11,7 +11,7 @@ require (
 	github.com/opencontainers/go-digest v1.0.0-rc1 // indirect
 	github.com/opencontainers/image-spec v1.0.1 // indirect
 	github.com/pkg/errors v0.8.0 // indirect
-	github.com/platinasystems/go v0.0.0-20181024011643-c5690056ee61
+	github.com/platinasystems/go v1.1.0-rc1
 	github.com/platinasystems/go-redis-server v0.0.0-20170607003434-2aae595273b8 // indirect
 	github.com/platinasystems/liner v0.0.0-20170801164932-8dd8fbd0e16d // indirect
 	github.com/platinasystems/log v1.1.0

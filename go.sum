@@ -66,6 +66,8 @@ github.com/platinasystems/go v0.0.0-20181024004630-4851144a728a h1:VgRF7gi3Ry1O4
 github.com/platinasystems/go v0.0.0-20181024004630-4851144a728a/go.mod h1:kMJXRKy+b20srT+OCzBtfCkAmhH61PeNSIoR0sdIdyA=
 github.com/platinasystems/go v0.0.0-20181024011643-c5690056ee61 h1:1BaTChfkDAwuN6y6sSGkQeA1SI1JQs7a7Urbbubft4Y=
 github.com/platinasystems/go v0.0.0-20181024011643-c5690056ee61/go.mod h1:9WROB8EK+qy08pgrbaICHv2VEflVInH4zugLoLYuC5k=
+github.com/platinasystems/go v1.1.0-rc1 h1:MvK1BrZUg+taENK4gY7UOJk0FShEYMPrhs9kOSOuqFQ=
+github.com/platinasystems/go v1.1.0-rc1/go.mod h1:9WROB8EK+qy08pgrbaICHv2VEflVInH4zugLoLYuC5k=
 github.com/platinasystems/go-redis-server v0.0.0-20170607003434-2aae595273b8 h1:g/xRUhEichcPkHc9od8pSW5nnc/j58VrGS2GKs7YtAM=
 github.com/platinasystems/go-redis-server v0.0.0-20170607003434-2aae595273b8/go.mod h1:/GXF5FQty+9BTtfCsfFuD4/pHf/b2cN3f3Ic0nLagQw=
 github.com/platinasystems/i2c v0.0.0-20181019213407-8214913e67af h1:bHZ3RKuiaglPYzAqoGD2zheO9JIs4OA22CqdxZ6I/mQ=
