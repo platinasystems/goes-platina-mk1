@@ -12,14 +12,12 @@
 //
 // Or with NDA access to the plugin source, build it with,
 //
-//	cd fe1
-//	go build -ldflags "-X 'main.Version=$(git describe)'" -buildmode=plugin
-//	zip ../fe1.zip fe1.so
-//	cd ..
+//	go build -buildmode=plugin github.com/platinasystems/fe1/fe1
+//	zip fe1.zip fe1.so
 //
 // Then build the program and append the zipped plugin.
 //
-//	go build -ldflags "-X 'main.Version=$(git describe)'"
+//	go build
 //	cat fe1.zip >> goes-platina-mk1
 //	zip -q -A goes-platina-mk1
 //
@@ -37,13 +35,6 @@ import (
 	fe1 "github.com/platinasystems/vnet/devices/ethernet/switch/fe1"
 	platform "github.com/platinasystems/vnet/platforms/fe1"
 )
-
-const (
-	ldflags = `-ldflags "-X 'main.Version=$(git describe)'"`
-	version = "FIXME with, go build " + ldflags
-)
-
-var Version = version
 
 type cache struct {
 	plugin   *plugin.Plugin

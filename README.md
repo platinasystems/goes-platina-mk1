@@ -11,21 +11,19 @@ $ zip fe1.zip fe1.so
 Or with NDA access to the plugin source, build it with,
 
 ```console
-$ cd fe1
-$ go build -ldflags "-X 'main.Version=$(git describe)'" -buildmode=plugin
-$ zip ../fe1.zip fe1.so
-$ cd ..
+$ go build -buildmode=plugin github.com/platinasystems/fe1/fe1
+$ zip fe1.zip fe1.so
 ```
 
 Then build the program and append the zipped plugin.
 
 ```console
-$ go build -ldflags "-X 'main.Version=$(git describe)'"
+$ go build
 $ cat fe1.zip >> goes-platina-mk1
 $ zip -q -A goes-platina-mk1
 ```
 
-Install this on a *mark 1* switchi with,
+Install this on a *mark 1* switch with,
 
 ```console
 $ sudo ./goes-platina-mk1 install
