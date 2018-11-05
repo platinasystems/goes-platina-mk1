@@ -20,10 +20,6 @@
 //	go build
 //	cat fe1.zip >> goes-platina-mk1
 //	zip -q -A goes-platina-mk1
-//
-// With NDA access to the imported plugin source, you may test with,
-//	go test -c
-//	sudo GOPATH=$GOPATH ./goes-platina-mk1.test [-test.help]
 package main
 
 import (

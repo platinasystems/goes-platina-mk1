@@ -53,51 +53,6 @@ command line interface.
 
 See also [errata].
 
-With NDA access to the imported plugin source, you may test with,
-
-```console
-$ go test -c
-$ sudo GOPATH=$GOPATH ./goes-platina-mk1.test [-test.help]
-```
-
-To run unit tests, loopback 6 pairs for ports and edit the configuration
-as follows:
-```console
-$ editor testdata/netport.yaml
-$ git update-index --assume-unchanged testdata/netport.yaml
-$ editor testdata/ethtool.yaml
-$ git update-index --assume-unchanged testdata/ethtool.yaml
-```
-
-Test Options:
-
-```console
--test.alpha	this is a zero based alpha system
--test.dryrun	don't run, just print test names
--test.main	internal flag to run given goes command
--test.pause	enable progromatic pause to start debugger
--test.run=Test/PATTERN
-		run the matching tests
--test.v		verbose
--test.vv	log test.Program output
--test.vvv	log test.Program execution
-```
-
-For example:
-```console
-sudo GOPATH=$GOPATH ./goes-platina-mk1.test -test.run Test/docker/frr/ospf/eth
-sudo GOPATH=$GOPATH ./goes-platina-mk1.test -test.run Test/docker/frr/.*/eth
-sudo GOPATH=$GOPATH ./goes-platina-mk1.test -test.run Test/.*/.*/.*/vlan
-```
-
-To list all tests:
-```console
-$ ./goes-platina-mk1.test -test.dryrun
-Test
-...
-PASS
-```
-
 ---
 
 *&copy; 2015-2018 Platina Systems, Inc. All rights reserved.
