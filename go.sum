@@ -54,6 +54,7 @@ github.com/platinasystems/fe1 v1.1.0 h1:YhOv2CtQoFHIcCJKJPYSn73XycbnIJ+feZBkEGA3
 github.com/platinasystems/fe1 v1.1.0/go.mod h1:JRavZa3J7MBeahy8Zi3GFuDKzATnwZUnY6BdZRw8TJY=
 github.com/platinasystems/fe1 v1.1.1 h1:RniEpTw0BDs+JoebFHz37G8E7xvaf88NQaFOsjbCpvI=
 github.com/platinasystems/fe1 v1.1.1/go.mod h1:sqsPfyzX91KhqcOc24JJ9/PxZHGxD2AR2POxw1qyw50=
+github.com/platinasystems/fe1 v1.1.2/go.mod h1:7P+3V7/e7IJyhggnBZj8Ol0TJttJwsKXupDHly2k50A=
 github.com/platinasystems/firmware-fe1a v0.0.0-20181017185739-2d160f42cff1 h1:1rx0c3jxk6+xjQyRE+hWgiC469tUG6aRo3FQRIH894c=
 github.com/platinasystems/firmware-fe1a v0.0.0-20181017185739-2d160f42cff1/go.mod h1:F0KAFwctbk1FB557q7m6atg3aQgyHj9NmAle2KswM6E=
 github.com/platinasystems/firmware-fe1a v1.1.0 h1:4MW5FHQLIMPDkCWnmn3FZJ8Q3yZ1oSLaPxMq1DuvL6w=
@@ -74,6 +75,8 @@ github.com/platinasystems/go v1.1.0-rc2 h1:BeIGKEVAk+LH59Ld+LgKTZGDRBwrf0NMa/vNL
 github.com/platinasystems/go v1.1.0-rc2/go.mod h1:slz5D+1HcRPnItk8dlq3j2oLNjtyKgXBrMCDaFODGJg=
 github.com/platinasystems/go v1.1.0-rc3 h1:mK4AkRsPGULCA8Cq5ik1OxbrJQcjM8nIoKpVM8DnMDU=
 github.com/platinasystems/go v1.1.0-rc3/go.mod h1:slz5D+1HcRPnItk8dlq3j2oLNjtyKgXBrMCDaFODGJg=
+github.com/platinasystems/go v1.1.0 h1:69Rxk7OnrulHo/aOEFWXY5niQZPIFDUVYLAECuLq4so=
+github.com/platinasystems/go v1.1.0/go.mod h1:3Wtid5aoX5SJG2O2JAAWX49yQ1yWwcSKeCtA5gdi/5A=
 github.com/platinasystems/go-redis-server v0.0.0-20170607003434-2aae595273b8 h1:g/xRUhEichcPkHc9od8pSW5nnc/j58VrGS2GKs7YtAM=
 github.com/platinasystems/go-redis-server v0.0.0-20170607003434-2aae595273b8/go.mod h1:/GXF5FQty+9BTtfCsfFuD4/pHf/b2cN3f3Ic0nLagQw=
 github.com/platinasystems/i2c v0.0.0-20181019213407-8214913e67af h1:bHZ3RKuiaglPYzAqoGD2zheO9JIs4OA22CqdxZ6I/mQ=
@@ -100,6 +103,8 @@ github.com/platinasystems/vnet v1.1.0 h1:NP0WZHEf4OGofQqcl0IHBOmk8MxgMZXG2if8gRT
 github.com/platinasystems/vnet v1.1.0/go.mod h1:cZoInvF2bNCSTpUIMqXSTQ+7SUxMxgwwONQa10ndX8M=
 github.com/platinasystems/vnet v1.1.1 h1:GDkyEYvfFmcPCdcUpWyiKeY+tDp30v/oZUrVSmSimOM=
 github.com/platinasystems/vnet v1.1.1/go.mod h1:ys1IQV7DPZTq372+nIpfafe+2SAfLvVANSCNIrv24j8=
+github.com/platinasystems/vnet v1.1.2 h1:vRAaLXTxbKNMbfjYMdelQONW8S4etpKUdOi3KYvPB64=
+github.com/platinasystems/vnet v1.1.2/go.mod h1:ys1IQV7DPZTq372+nIpfafe+2SAfLvVANSCNIrv24j8=
 github.com/platinasystems/xeth v0.0.0-20181010000040-d9ed5089fdd0 h1:Jo+BYZRIUfTP9tgElahzcTY8bNXVkxljDs1HXfpORYs=
 github.com/platinasystems/xeth v0.0.0-20181010000040-d9ed5089fdd0/go.mod h1:MokUskjwMrKdnZ08SVlEh9dkQreCHtPPEMFA81kdahI=
 github.com/platinasystems/xeth v1.1.0 h1:xTGBrXepuXM+N0sb4lqY1fIkfu17fnPo4Hr53gnnPDQ=
