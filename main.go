@@ -7,99 +7,44 @@
 // To build this source you'll first need to extract the driver plugin from an
 // existing program binary.
 //
-//	unzip goes-platina-mk1 fe1.so
-//	zip fe1.zip fe1.so
+//	unzip goes-platina-mk1 vnet-platina-mk1.so
+//	zip plugins.zip vnet-platina-mk1.so
 //
 // Or with NDA access to the plugin source, build it with,
 //
-//	go build -buildmode=plugin github.com/platinasystems/fe1/fe1
-//	zip fe1.zip fe1.so
+//	go build -buildmode=plugin github.com/platinasystems/vnet-platina-mk1
+//	zip plugins.zip vnet-platina-mk1.so
 //
 // Then build the program and append the zipped plugin.
 //
 //	go build
-//	cat fe1.zip >> goes-platina-mk1
+//	cat plugins.zip >> goes-platina-mk1
 //	zip -q -A goes-platina-mk1
+//
+// Install the programs and the plugin(s) with,
+//
+//	sudo ./goes-platina-mk1 install
 package main
 
 import (
-	"plugin"
+	"fmt"
+	"os"
 
 	"github.com/platinasystems/go/goes"
-	"github.com/platinasystems/go/platform/mk1"
-	"github.com/platinasystems/vnet"
-	fe1 "github.com/platinasystems/vnet/devices/ethernet/switch/fe1"
-	platform "github.com/platinasystems/vnet/platforms/fe1"
+	"github.com/platinasystems/redis"
 )
 
-type cache struct {
-	plugin   *plugin.Plugin
-	licenses map[string]string
-	patents  map[string]string
-	versions map[string]string
-	init     func(*vnet.Vnet, *platform.Platform)
-	ap       func(v *vnet.Vnet, pp *platform.Platform)
-}
-
 func main() {
-	var c cache
-	goes.Info.Licenses = func() map[string]string {
-		if len(c.licenses) == 0 {
-			f := c.symbol("Licenses").(func() map[string]string)
-			c.licenses = f()
-			c.licenses["goes"] = goes.License
-		}
-		return c.licenses
-	}
-	goes.Info.Patents = func() map[string]string {
-		if len(c.patents) == 0 {
-			f := c.symbol("Patents").(func() map[string]string)
-			c.patents = f()
-			c.patents["goes"] = goes.Patents
-		}
-		return c.patents
-	}
+	goes.Info.Licenses = vnetd.Licenses
+	goes.Info.Patents = vnetd.Patents
 	goes.Info.Versions = func() map[string]string {
-		if len(c.versions) == 0 {
-			f := c.symbol("Versions").(func() map[string]string)
-			c.versions = f()
-			c.versions["goes-platina-mk1"] = Version
-		}
-		return c.versions
+		m := vnetd.Versions()
+		m["goes-platina-mk1"] = Version
+		return m
 	}
-	fe1.Init = func(v *vnet.Vnet, p *platform.Platform) {
-		if c.init == nil {
-			c.init = c.symbol("Init").(func(*vnet.Vnet,
-				*platform.Platform))
-		}
-		c.init(v, p)
+	redis.DefaultHash = "platina-mk1"
+	if err := Goes.Main(os.Args...); err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
 	}
-	fe1.AddPlatform = func(v *vnet.Vnet, p *platform.Platform) {
-		if c.ap == nil {
-			c.ap = c.symbol("AddPlatform").(func(*vnet.Vnet,
-				*platform.Platform))
-		}
-		c.ap(v, p)
-	}
-	mk1.Main()
-}
-
-func (c *cache) symbol(name string) plugin.Symbol {
-	// FIXME first try unpacking zip file appended to Args[0]
-	if c.plugin == nil {
-		var err error
-		c.plugin, err = plugin.Open("/usr/lib/goes/fe1.so")
-		if err != nil {
-			c.plugin, err = plugin.Open("fe1.so")
-			if err != nil {
-				panic(err)
-			}
-
-		}
-	}
-	sym, err := c.plugin.Lookup(name)
-	if err != nil {
-		panic(err)
-	}
-	return sym
 }
