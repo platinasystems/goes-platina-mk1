@@ -41,3 +41,15 @@ func (vnetdCommand) Main(args ...string) error {
 	}
 	return fmt.Errorf("%s not found", vnetPlatinaMk1)
 }
+
+func (c vnetdCommand) License() error {
+	return c.Main("-license")
+}
+
+func (c vnetdCommand) Patents() error {
+	return c.Main("-patents")
+}
+
+func (c vnetdCommand) Version() error {
+	return c.Main("-version")
+}

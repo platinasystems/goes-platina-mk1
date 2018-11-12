@@ -28,21 +28,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/platinasystems/go/goes"
 	"github.com/platinasystems/redis"
 )
 
 func main() {
-	goes.Info.Licenses = func() map[string]string {
-		return map[string]string{
-			"goes-platina-mk1": License,
-		}
-	}
-	goes.Info.Versions = func() map[string]string {
-		return map[string]string{
-			"goes-platina-mk1": Version,
-		}
-	}
 	redis.DefaultHash = "platina-mk1"
 	if err := Goes.Main(os.Args...); err != nil {
 		fmt.Fprintln(os.Stderr, err)
