@@ -62,7 +62,6 @@ import (
 	"github.com/platinasystems/go/goes/cmd/platina/mk1/upgrade"
 	"github.com/platinasystems/go/goes/cmd/ps"
 	"github.com/platinasystems/go/goes/cmd/pwd"
-	"github.com/platinasystems/go/goes/cmd/qsfp"
 	"github.com/platinasystems/go/goes/cmd/reboot"
 	"github.com/platinasystems/go/goes/cmd/redisd"
 	"github.com/platinasystems/go/goes/cmd/reload"
@@ -87,6 +86,7 @@ import (
 	"github.com/platinasystems/go/goes/cmd/uptimed"
 	"github.com/platinasystems/go/goes/cmd/wget"
 	"github.com/platinasystems/go/goes/lang"
+	"github.com/platinasystems/goes-platina-mk1/qsfp"
 	"github.com/platinasystems/redis"
 	"github.com/platinasystems/redis/publisher"
 )
@@ -151,10 +151,8 @@ var Goes = &goes.Goes{
 		"ping":    ping.Command{},
 		"ps":      ps.Command{},
 		"pwd":     pwd.Command{},
-		"qsfp": &qsfp.Command{
-			Init: qsfpInit,
-		},
-		"reboot": reboot.Command{},
+		"qsfp":    &qsfp.Command{},
+		"reboot":  reboot.Command{},
 		"redisd": &redisd.Command{
 			Devs:    []string{"lo", "eth0"},
 			Machine: "platina-mk1",
