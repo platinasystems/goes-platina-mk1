@@ -4,24 +4,22 @@
 
 // This is Platina's Mk1 TOR.
 //
-// To build this source you'll first need to extract the driver plugin from an
-// existing program binary.
-//
-//	unzip goes-platina-mk1 vnet-platina-mk1.so
-//	zip plugins.zip vnet-platina-mk1.so
-//
-// Or with NDA access to the plugin source, build it with,
-//
-//	go build -buildmode=plugin github.com/platinasystems/vnet-platina-mk1
-//	zip plugins.zip vnet-platina-mk1.so
-//
-// Then build the program and append the zipped plugin.
+// To build this source,
 //
 //	go build
-//	cat plugins.zip >> goes-platina-mk1
+//
+// Then zip and append an existing driver.
+//
+//	zip dirvers /usr/lib/goes/vnet-platina-mk1
+//	cat drivers.zip >> goes-platina-mk1
 //	zip -q -A goes-platina-mk1
 //
-// Install the programs and the plugin(s) with,
+// Or with NDA access to the driver source,
+//
+//	go build github.com/platinasystems/vnet-platina-mk1
+//	zip drivers.zip vnet-platina-mk1
+//
+// Install the programs and driver with,
 //
 //	sudo ./goes-platina-mk1 install
 package main
@@ -38,9 +36,9 @@ func main() {
 	goes.Info.Licenses = vnetd.Licenses
 	goes.Info.Patents = vnetd.Patents
 	goes.Info.Versions = func() map[string]string {
-		m := vnetd.Versions()
-		m["goes-platina-mk1"] = Version
-		return m
+		return map[string]string{
+			"goes-platina-mk1": Version,
+		}
 	}
 	redis.DefaultHash = "platina-mk1"
 	if err := Goes.Main(os.Args...); err != nil {

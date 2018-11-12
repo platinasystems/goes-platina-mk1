@@ -5,87 +5,39 @@
 package main
 
 import (
+	"fmt"
+	"os"
 	"path/filepath"
-	"plugin"
+	"syscall"
 
 	"github.com/platinasystems/go/goes/cmd"
 	"github.com/platinasystems/go/goes/lang"
 )
 
-type vnetdCommand struct {
-	plugin *plugin.Plugin
-	cached struct {
-		main     func(...string) error
-		licenses func() map[string]string
-		patents  func() map[string]string
-		versions func() map[string]string
-	}
-}
+type vnetdCommand struct{}
 
-var vnetd vnetdCommand
+func (vnetdCommand) String() string { return "vnetd" }
 
-func (*vnetdCommand) String() string { return "vnetd" }
+func (vnetdCommand) Usage() string { return "vnetd" }
 
-func (*vnetdCommand) Usage() string { return "vnetd" }
-
-func (*vnetdCommand) Apropos() lang.Alt {
+func (vnetdCommand) Apropos() lang.Alt {
 	return lang.Alt{
 		lang.EnUS: "Platina's Mk1 TOR driver daemon",
 	}
 }
 
-func (*vnetdCommand) Kind() cmd.Kind { return cmd.Daemon }
+func (vnetdCommand) Kind() cmd.Kind { return cmd.Daemon }
 
-func (vnetd *vnetdCommand) Main(args ...string) error {
-	if vnetd.cached.main == nil {
-		vnetd.cached.main =
-			vnetd.symbol("Main").(func(...string) error)
-	}
-	return vnetd.cached.main(args...)
-}
+func (vnetdCommand) Main(args ...string) error {
+	const vnetPlatinaMk1 = "vnet-platina-mk1"
 
-func (vnetd *vnetdCommand) Licenses() map[string]string {
-	if vnetd.cached.licenses == nil {
-		vnetd.cached.licenses =
-			vnetd.symbol("Licenses").(func() map[string]string)
-	}
-	return vnetd.cached.licenses()
-}
-
-func (vnetd *vnetdCommand) Patents() map[string]string {
-	if vnetd.cached.patents == nil {
-		vnetd.cached.patents =
-			vnetd.symbol("Patents").(func() map[string]string)
-	}
-	return vnetd.cached.patents()
-}
-
-func (*vnetdCommand) Versions() map[string]string {
-	if vnetd.cached.versions == nil {
-		vnetd.cached.versions =
-			vnetd.symbol("Versions").(func() map[string]string)
-	}
-	return vnetd.cached.versions()
-}
-
-func (vnetd *vnetdCommand) symbol(name string) plugin.Symbol {
-	// FIXME first try unpacking zip file appended to Args[0]
-	const so = "vnet-platina-mk1.so"
-	libso := filepath.Join("/usr/lib/goes", so)
-	if vnetd.plugin == nil {
-		var err error
-		vnetd.plugin, err = plugin.Open(libso)
-		if err != nil {
-			vnetd.plugin, err = plugin.Open(so)
-			if err != nil {
-				panic(err)
-			}
-
+	for _, dir := range []string{"/usr/lib/goes", "."} {
+		fn := filepath.Join(dir, vnetPlatinaMk1)
+		if _, err := os.Stat(fn); err == nil {
+			return syscall.Exec(fn,
+				append([]string{vnetPlatinaMk1}, args...),
+				os.Environ())
 		}
 	}
-	sym, err := vnetd.plugin.Lookup(name)
-	if err != nil {
-		panic(err)
-	}
-	return sym
+	return fmt.Errorf("%s not found", vnetPlatinaMk1)
 }

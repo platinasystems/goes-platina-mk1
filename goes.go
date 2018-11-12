@@ -213,7 +213,7 @@ var Goes = &goes.Goes{
 		"upgrade":    upgrade.Command{},
 		"uptimed":    uptimed.Command(make(chan struct{})),
 		"vnet":       vnetCommand{},
-		"vnetd":      &vnetd,
+		"vnetd":      vnetdCommand{},
 		"wget":       wget.Command{},
 		"biosupdate": biosupdate.Command{},
 	},
