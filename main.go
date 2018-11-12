@@ -33,8 +33,11 @@ import (
 )
 
 func main() {
-	goes.Info.Licenses = vnetd.Licenses
-	goes.Info.Patents = vnetd.Patents
+	goes.Info.Licenses = func() map[string]string {
+		return map[string]string{
+			"goes-platina-mk1": License,
+		}
+	}
 	goes.Info.Versions = func() map[string]string {
 		return map[string]string{
 			"goes-platina-mk1": Version,
