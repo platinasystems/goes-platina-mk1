@@ -77,7 +77,6 @@ import (
 	"github.com/platinasystems/go/goes/cmd/stty"
 	"github.com/platinasystems/go/goes/cmd/subscribe"
 	"github.com/platinasystems/go/goes/cmd/sync"
-	"github.com/platinasystems/go/goes/cmd/tempd"
 	"github.com/platinasystems/go/goes/cmd/testcmd"
 	"github.com/platinasystems/go/goes/cmd/thencmd"
 	"github.com/platinasystems/go/goes/cmd/truecmd"
@@ -193,17 +192,12 @@ var Goes = &goes.Goes{
 					10*time.Second)
 			},
 		},
-		"stop":      &stop.Command{},
-		"status":    status.Command{},
-		"stty":      stty.Command{},
-		"subscribe": subscribe.Command{},
-		"sync":      sync.Command{},
-		"tempd": &tempd.Command{
-			VpageByKey: map[string]uint8{
-				"sys.cpu.coretemp.units.C": 0,
-				"bmc.redis.status":         0,
-			},
-		},
+		"stop":       &stop.Command{},
+		"status":     status.Command{},
+		"stty":       stty.Command{},
+		"subscribe":  subscribe.Command{},
+		"sync":       sync.Command{},
+		"tempd":      tempdCommand(make(chan struct{})),
 		"[":          testcmd.Command{},
 		"then":       &thencmd.Command{},
 		"toggle":     &toggle.Command{},
