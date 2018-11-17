@@ -105,7 +105,7 @@ var Goes = &goes.Goes{
 		"cp":       cp.Command{},
 		"dmesg":    dmesg.Command{},
 		"echo":     echo.Command{},
-		"eeprom":   eepromcmd.Command{},
+		"eeprom":   eepromcmd.Command{platinaMk1EepromConfig},
 		"else":     &elsecmd.Command{},
 		"env":      &env.Command{},
 		"exec":     exec.Command{},
@@ -156,13 +156,7 @@ var Goes = &goes.Goes{
 			Devs:    []string{"lo", "eth0"},
 			Machine: "platina-mk1",
 			Hook: func(pub *publisher.Publisher) {
-				eeprom.Config(
-					eeprom.BusIndex(0),
-					eeprom.BusAddress(0x51),
-					eeprom.BusDelay(10*time.Millisecond),
-					eeprom.MinMacs(132),
-					eeprom.OUI([3]byte{0x02, 0x46, 0x8a}),
-				)
+				platinaMk1EepromConfig()
 				eeprom.RedisdHook(pub)
 			},
 		},
@@ -211,4 +205,14 @@ var Goes = &goes.Goes{
 		"wget":       wget.Command{},
 		"biosupdate": biosupdate.Command{},
 	},
+}
+
+func platinaMk1EepromConfig() {
+	eeprom.Config(
+		eeprom.BusIndex(0),
+		eeprom.BusAddress(0x51),
+		eeprom.BusDelay(10*time.Millisecond),
+		eeprom.MinMacs(132),
+		eeprom.OUI([3]byte{0x02, 0x46, 0x8a}),
+	)
 }
