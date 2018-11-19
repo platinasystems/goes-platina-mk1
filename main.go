@@ -10,7 +10,7 @@
 //
 // Then zip and append an existing driver.
 //
-//	zip dirvers /usr/lib/goes/vnet-platina-mk1
+//	zip drivers /usr/lib/goes/vnet-platina-mk1
 //	cat drivers.zip >> goes-platina-mk1
 //	zip -q -A goes-platina-mk1
 //
