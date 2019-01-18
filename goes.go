@@ -5,6 +5,9 @@
 package main
 
 import (
+	"io/ioutil"
+	"os"
+	"path/filepath"
 	"time"
 
 	"github.com/platinasystems/go/goes"
@@ -20,7 +23,6 @@ import (
 	"github.com/platinasystems/go/goes/cmd/daemons"
 	"github.com/platinasystems/go/goes/cmd/dmesg"
 	"github.com/platinasystems/go/goes/cmd/echo"
-	eepromcmd "github.com/platinasystems/go/goes/cmd/eeprom"
 	eeprom "github.com/platinasystems/go/goes/cmd/eeprom/platina_eeprom"
 	"github.com/platinasystems/go/goes/cmd/elsecmd"
 	"github.com/platinasystems/go/goes/cmd/env"
@@ -91,6 +93,31 @@ import (
 	"github.com/platinasystems/redis/publisher"
 )
 
+const (
+	machine = "goes-platina-mk1"
+	onieDir = "/sys/bus/i2c/devices/0-0051/onie"
+)
+
+var onieFileToRedisName = map[string]string{
+	"country_code":     "CountryCode",
+	"crc":              "Crc",
+	"device_version":   "DeviceVersion",
+	"diag_version":     "DiagVersion",
+	"label_revision":   "LabelRevision",
+	"mac_base":         "BaseEthernetAddress",
+	"manufacture_date": "ManufactureDate",
+	"manufacturer":     "Manufacturer",
+	"num_macs":         "NEthernetAddress",
+	"onie_version":     "OnieVersion",
+	"part_number":      "PartNumber",
+	"platform_name":    "PlatformName",
+	"product_name":     "ProductName",
+	"serial_number":    "SerialNumber",
+	"service_tag":      "ServiceTag",
+	"vendor":           "Vendor",
+	"vendor_extension": "VendorExtension",
+}
+
 var Goes = &goes.Goes{
 	NAME: "goes-platina-mk1",
 	APROPOS: lang.Alt{
@@ -106,7 +133,6 @@ var Goes = &goes.Goes{
 		"cp":       cp.Command{},
 		"dmesg":    dmesg.Command{},
 		"echo":     echo.Command{},
-		"eeprom":   eepromcmd.Command{platinaMk1EepromConfig},
 		"else":     &elsecmd.Command{},
 		"env":      &env.Command{},
 		"exec":     exec.Command{},
@@ -156,10 +182,15 @@ var Goes = &goes.Goes{
 		"reboot":  reboot.Command{},
 		"redisd": &redisd.Command{
 			Devs:    []string{"lo", "eth0"},
-			Machine: "platina-mk1",
+			Machine: machine,
 			Hook: func(pub *publisher.Publisher) {
-				platinaMk1EepromConfig()
-				eeprom.RedisdHook(pub)
+				_, err := os.Stat(onieDir)
+				if err == nil {
+					oniePub(pub)
+				} else {
+					platinaMk1EepromConfig()
+					eeprom.RedisdHook(pub)
+				}
 			},
 		},
 		"reload":  reload.Command{},
@@ -175,7 +206,7 @@ var Goes = &goes.Goes{
 			ByName: map[string]cmd.Cmd{
 				"cmdline": cmdline.Command{},
 				"iminfo":  iminfo.Command{},
-				"machine": goes.ShowMachine("goes-platina-mk1"),
+				"machine": goes.ShowMachine(machine),
 			},
 		},
 		"/init":  &slashinit.Command{},
@@ -217,4 +248,22 @@ func platinaMk1EepromConfig() {
 		eeprom.MinMacs(132),
 		eeprom.OUI([3]byte{0x02, 0x46, 0x8a}),
 	)
+}
+
+func oniePub(pub *publisher.Publisher) {
+	list, err := ioutil.ReadDir(onieDir)
+	if err != nil {
+		pub.Printf("onie: %v", err)
+		return
+	}
+	for _, fi := range list {
+		var s string
+		data, err := ioutil.ReadFile(filepath.Join(onieDir, fi.Name()))
+		if err == nil {
+			s = string(data)
+		} else {
+			s = err.Error()
+		}
+		pub.Printf("eeprom.%s: %s", onieFileToRedisName[fi.Name()], s)
+	}
 }
