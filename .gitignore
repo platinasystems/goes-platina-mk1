@@ -3,6 +3,7 @@
 *.orig
 *.patch
 *.rej
+*.sig
 *.so
 *.swp
 *.test
