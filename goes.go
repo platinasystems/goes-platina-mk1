@@ -94,7 +94,6 @@ import (
 )
 
 const (
-	machine = "goes-platina-mk1"
 	onieDir = "/sys/bus/i2c/devices/0-0051/onie"
 )
 
@@ -124,25 +123,26 @@ var Goes = &goes.Goes{
 		lang.EnUS: "goes machine for platina's mk1 TOR",
 	},
 	ByName: map[string]cmd.Cmd{
-		"!":        bang.Command{},
-		"cli":      &cli.Command{},
-		"bootc":    &bootc.Command{},
-		"cat":      cat.Command{},
-		"cd":       &cd.Command{},
-		"chmod":    chmod.Command{},
-		"cp":       cp.Command{},
-		"dmesg":    dmesg.Command{},
-		"echo":     echo.Command{},
-		"else":     &elsecmd.Command{},
-		"env":      &env.Command{},
-		"exec":     exec.Command{},
-		"exit":     exit.Command{},
-		"export":   export.Command{},
-		"false":    falsecmd.Command{},
-		"femtocom": femtocom.Command{},
-		"fi":       &ficmd.Command{},
-		"function": &function.Command{},
-		"gpio":     &gpio.Command{},
+		"!":         bang.Command{},
+		"cli":       &cli.Command{},
+		"bootc":     &bootc.Command{},
+		"cat":       cat.Command{},
+		"cd":        &cd.Command{},
+		"chmod":     chmod.Command{},
+		"copyright": License,
+		"cp":        cp.Command{},
+		"dmesg":     dmesg.Command{},
+		"echo":      echo.Command{},
+		"else":      &elsecmd.Command{},
+		"env":       &env.Command{},
+		"exec":      exec.Command{},
+		"exit":      exit.Command{},
+		"export":    export.Command{},
+		"false":     falsecmd.Command{},
+		"femtocom":  femtocom.Command{},
+		"fi":        &ficmd.Command{},
+		"function":  &function.Command{},
+		"gpio":      &gpio.Command{},
 		"goes-daemons": &daemons.Command{
 			Init: [][]string{
 				[]string{"redisd"},
@@ -167,6 +167,7 @@ var Goes = &goes.Goes{
 		"kexec":   kexec.Command{},
 		"keys":    keys.Command{},
 		"kill":    kill.Command{},
+		"license": License,
 		"ln":      ln.Command{},
 		"log":     log.Command{},
 		"ls":      ls.Command{},
@@ -175,6 +176,7 @@ var Goes = &goes.Goes{
 		"mknod":   mknod.Command{},
 		"mac-ll":  mac_ll.Command{},
 		"mount":   mount.Command{},
+		"patents": Patents,
 		"ping":    ping.Command{},
 		"ps":      ps.Command{},
 		"pwd":     pwd.Command{},
@@ -182,7 +184,7 @@ var Goes = &goes.Goes{
 		"reboot":  reboot.Command{},
 		"redisd": &redisd.Command{
 			Devs:    []string{"lo", "eth0"},
-			Machine: machine,
+			Machine: string(Machine),
 			Hook: func(pub *publisher.Publisher) {
 				_, err := os.Stat(onieDir)
 				if err == nil {
@@ -204,9 +206,13 @@ var Goes = &goes.Goes{
 				lang.EnUS: "print stuff",
 			},
 			ByName: map[string]cmd.Cmd{
-				"cmdline": cmdline.Command{},
-				"iminfo":  iminfo.Command{},
-				"machine": goes.ShowMachine(machine),
+				"cmdline":   cmdline.Command{},
+				"copyright": License,
+				"iminfo":    iminfo.Command{},
+				"license":   License,
+				"machine":   Machine,
+				"patents":   Patents,
+				"version":   &Version,
 			},
 		},
 		"/init":  &slashinit.Command{},
@@ -233,6 +239,9 @@ var Goes = &goes.Goes{
 		"uninstall":  &uninstall.Command{},
 		"upgrade":    upgrade.Command{},
 		"uptimed":    uptimed.Command(make(chan struct{})),
+		"-version":   &Version,
+		"--version":  &Version,
+		"version":    &Version,
 		"vnet":       vnetCommand{},
 		"vnetd":      vnetdCommand{},
 		"wget":       wget.Command{},

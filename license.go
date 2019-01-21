@@ -1,7 +1,15 @@
 package main
 
-const License = `
-Copyright © 2015-2018 Platina Systems, Inc. All rights reserved.
+import (
+	"os"
+
+	"github.com/platinasystems/go/goes/lang"
+)
+
+type license string
+
+const License license = `
+Copyright © 2015-2019 Platina Systems, Inc. All rights reserved.
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the
@@ -299,3 +307,17 @@ POSSIBILITY OF SUCH DAMAGES.
 
                      END OF TERMS AND CONDITIONS
 `
+
+func (license) String() string { return "license" }
+func (license) Usage() string  { return "[show ]license" }
+
+func (license) Apropos() lang.Alt {
+	return lang.Alt{
+		lang.EnUS: "print machine license",
+	}
+}
+
+func (s license) Main(...string) error {
+	os.Stdout.WriteString(string(s)[1:])
+	return nil
+}
