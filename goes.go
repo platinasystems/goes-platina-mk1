@@ -247,7 +247,7 @@ var Goes = &goes.Goes{
 		"--version": &Version,
 		"version":   &Version,
 		"vnet":      vnetCommand{},
-		"vnetd":     vnetdCommand{},
+		"vnetd":     Vnetd,
 		"wget":      wget.Command{},
 	},
 }

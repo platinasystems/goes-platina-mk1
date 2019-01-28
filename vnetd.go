@@ -7,49 +7,76 @@ package main
 import (
 	"fmt"
 	"os"
-	"path/filepath"
+	"strings"
 	"syscall"
 
 	"github.com/platinasystems/go/goes/cmd"
 	"github.com/platinasystems/go/goes/lang"
 )
 
-type vnetdCommand struct{}
+type vnetd string
 
-func (vnetdCommand) String() string { return "vnetd" }
+var Vnetd vnetd = "vnet-platina-mk1"
 
-func (vnetdCommand) Usage() string { return "vnetd" }
+func (vnetd) String() string { return "vnetd" }
 
-func (vnetdCommand) Apropos() lang.Alt {
+func (vnetd) Usage() string { return "vnetd" }
+
+func (vnetd) Apropos() lang.Alt {
 	return lang.Alt{
 		lang.EnUS: "Platina's Mk1 TOR driver daemon",
 	}
 }
 
-func (vnetdCommand) Kind() cmd.Kind { return cmd.Daemon }
+func (vnetd) Kind() cmd.Kind { return cmd.Daemon }
 
-func (vnetdCommand) Main(args ...string) error {
-	const vnetPlatinaMk1 = "vnet-platina-mk1"
-
-	for _, dir := range []string{"/usr/lib/goes", "."} {
-		fn := filepath.Join(dir, vnetPlatinaMk1)
-		if _, err := os.Stat(fn); err == nil {
-			return syscall.Exec(fn,
-				append([]string{vnetPlatinaMk1}, args...),
-				os.Environ())
-		}
+func (c vnetd) Main(args ...string) error {
+	pn, err := c.Path()
+	if err != nil {
+		return err
 	}
-	return fmt.Errorf("%s not found", vnetPlatinaMk1)
+	if len(args) == 1 && strings.TrimLeft(args[0], "-") == "path" {
+		fmt.Println(pn)
+		return nil
+	}
+	return syscall.Exec(pn, append([]string{string(c)}, args...),
+		os.Environ())
 }
 
-func (c vnetdCommand) License() error {
+func (c vnetd) License() error {
 	return c.Main("-license")
 }
 
-func (c vnetdCommand) Patents() error {
+func (c vnetd) Patents() error {
 	return c.Main("-patents")
 }
 
-func (c vnetdCommand) Version() error {
+func (c vnetd) Version() error {
 	return c.Main("-version")
+}
+
+func (c vnetd) Path() (string, error) {
+	cn := string(c)
+	self, err := os.Readlink("/proc/self/exe")
+	if err != nil {
+		return "", err
+	}
+	if self == "/usr/bin/goes" {
+		pn := "/usr/lib/goes/" + cn
+		_, err = os.Stat(pn)
+		if err == nil {
+			return pn, nil
+		}
+		perr := err.(*os.PathError)
+		return "", fmt.Errorf("%s: %s", perr.Path, perr.Err)
+	}
+	for _, pn := range []string{
+		"./" + cn,
+		"/usr/lib/goes/" + cn,
+	} {
+		if _, err := os.Stat(pn); err == nil {
+			return pn, nil
+		}
+	}
+	return "", fmt.Errorf("%s not found", cn)
 }
