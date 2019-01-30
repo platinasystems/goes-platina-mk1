@@ -216,6 +216,7 @@ var Goes = &goes.Goes{
 				"license":   License,
 				"machine":   Machine,
 				"patents":   Patents,
+				"tech":      tech{},
 				"version":   &Version,
 			},
 		},
