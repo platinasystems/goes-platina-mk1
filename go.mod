@@ -2,8 +2,8 @@ module github.com/platinasystems/goes-platina-mk1
 
 require (
 	github.com/platinasystems/atsock v1.1.0
-	github.com/platinasystems/go v1.2.0-rc.1.0.20190122190309-b9119b1f2352
+	github.com/platinasystems/go v1.3.0
 	github.com/platinasystems/i2c v1.1.0
-	github.com/platinasystems/log v1.1.0
+	github.com/platinasystems/log v1.2.1
 	github.com/platinasystems/redis v1.1.0
 )

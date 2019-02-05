@@ -103,6 +103,8 @@ github.com/platinasystems/go v1.2.0-rc.1.0.20190121174037-754311345850 h1:ivvwEl
 github.com/platinasystems/go v1.2.0-rc.1.0.20190121174037-754311345850/go.mod h1:403XKgNysmz7yQ1hq+KICFA+BxKdv9WKs900v+yO72o=
 github.com/platinasystems/go v1.2.0-rc.1.0.20190122190309-b9119b1f2352 h1:uD6UtF6OWTUt6IdsKNm+zZw7tUAliFMO1js1mL/DN1c=
 github.com/platinasystems/go v1.2.0-rc.1.0.20190122190309-b9119b1f2352/go.mod h1:403XKgNysmz7yQ1hq+KICFA+BxKdv9WKs900v+yO72o=
+github.com/platinasystems/go v1.3.0 h1:+jYiPrLLpXyXt1cE/P1jm6HVJ/qmaswWqs0OqFcHtyg=
+github.com/platinasystems/go v1.3.0/go.mod h1:ygL8/iz382cNzTP0wmKkiPF6mD3EoDHFFQwKEo6ax0U=
 github.com/platinasystems/go-redis-server v0.0.0-20170607003434-2aae595273b8 h1:g/xRUhEichcPkHc9od8pSW5nnc/j58VrGS2GKs7YtAM=
 github.com/platinasystems/go-redis-server v0.0.0-20170607003434-2aae595273b8/go.mod h1:/GXF5FQty+9BTtfCsfFuD4/pHf/b2cN3f3Ic0nLagQw=
 github.com/platinasystems/go-redis-server v0.0.0-20181030193423-fcb8fa742b73 h1:8DVy1rcSWTnJt248DAD0JzeASS3j8Ljg+rCoKPHW5Qo=
@@ -123,6 +125,8 @@ github.com/platinasystems/log v0.0.0-20181019191631-6c3b2ed28252 h1:nE1v/LGhdYJ3
 github.com/platinasystems/log v0.0.0-20181019191631-6c3b2ed28252/go.mod h1:5Wjp9vxMfkZGWz2Ep3ghzsfarcs9MMfiE2RzKwseyKQ=
 github.com/platinasystems/log v1.1.0 h1:hjWJskNV5QC36B+fz9rIyZjMztXZeRnOCypoSALlsm4=
 github.com/platinasystems/log v1.1.0/go.mod h1:5Wjp9vxMfkZGWz2Ep3ghzsfarcs9MMfiE2RzKwseyKQ=
+github.com/platinasystems/log v1.2.1 h1:a43xeRp+KouaPlVTfOdeI2vNj755PBf8ovKEAMT8o5w=
+github.com/platinasystems/log v1.2.1/go.mod h1:5Wjp9vxMfkZGWz2Ep3ghzsfarcs9MMfiE2RzKwseyKQ=
 github.com/platinasystems/memio v0.0.0-20181109233200-08a432045d57 h1:aXCGfZLnvW0ffPXgYB4yJumQGDvq2z8e8vxlVnGVdy8=
 github.com/platinasystems/memio v0.0.0-20181109233200-08a432045d57/go.mod h1:5432a+C/LwmCPg543MFUCCzgTaEpAURrTC01os0/8k8=
 github.com/platinasystems/redis v0.0.0-20181022194819-47dc1dbf4623 h1:i5BOdwsFo16Srld2T06G4G+zXngakusLxmpLHzomy1k=

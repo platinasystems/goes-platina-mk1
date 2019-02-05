@@ -47,7 +47,6 @@ type techEntry struct {
 
 func (c tech) Main(args ...string) error {
 	var (
-		skipLog    = true // FIXME after implementing goes show log
 		skipOnie   = true
 		skipRedis  = true
 		skipVnet   = true
@@ -154,17 +153,9 @@ func (c tech) Main(args ...string) error {
 		},
 		{
 			key:   "log",
-			skip:  skipLog,
 			block: true,
 			prog:  self,
 			args:  []string{"show", "log"},
-		},
-		{
-			key:   "/var/log/messages",
-			skip:  !skipLog,
-			block: true,
-			prog:  "tail",
-			args:  []string{"-n", "128", "/var/log/messages"},
 		},
 		{
 			key:   "vnet_errors",
