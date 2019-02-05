@@ -134,6 +134,7 @@ var Goes = &goes.Goes{
 		"chmod":      chmod.Command{},
 		"copyright":  License,
 		"cp":         cp.Command{},
+		"daemons":    daemons.Admin,
 		"dmesg":      dmesg.Command{},
 		"echo":       echo.Command{},
 		"else":       &elsecmd.Command{},
@@ -146,7 +147,7 @@ var Goes = &goes.Goes{
 		"fi":         &ficmd.Command{},
 		"function":   &function.Command{},
 		"gpio":       &gpio.Command{},
-		"goes-daemons": &daemons.Command{
+		"goes-daemons": &daemons.Server{
 			Init: [][]string{
 				[]string{"redisd"},
 				[]string{"uptimed"},
@@ -212,8 +213,10 @@ var Goes = &goes.Goes{
 				"buildid":   buildid.Command{},
 				"cmdline":   cmdline.Command{},
 				"copyright": License,
+				"daemons":   daemons.Status{},
 				"iminfo":    iminfo.Command{},
 				"license":   License,
+				"log":       daemons.Log{},
 				"machine":   Machine,
 				"patents":   Patents,
 				"tech":      tech{},
