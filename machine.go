@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/platinasystems/go/goes/lang"
+	"github.com/platinasystems/goes/lang"
 )
 
 type machine string

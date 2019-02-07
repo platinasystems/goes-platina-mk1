@@ -15,7 +15,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/platinasystems/go/goes/lang"
+	"github.com/platinasystems/goes/lang"
 )
 
 type tech struct{}

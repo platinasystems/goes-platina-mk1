@@ -10,8 +10,8 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/platinasystems/go/goes/cmd"
-	"github.com/platinasystems/go/goes/lang"
+	"github.com/platinasystems/goes/cmd"
+	"github.com/platinasystems/goes/lang"
 )
 
 type vnetd string

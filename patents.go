@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/platinasystems/go/goes/lang"
+	"github.com/platinasystems/goes/lang"
 )
 
 type patents string

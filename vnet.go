@@ -17,8 +17,8 @@ import (
 	"syscall"
 
 	"github.com/platinasystems/atsock"
-	"github.com/platinasystems/go/goes/cmd"
-	"github.com/platinasystems/go/goes/lang"
+	"github.com/platinasystems/goes/cmd"
+	"github.com/platinasystems/goes/lang"
 )
 
 type vnetCommand struct{}
