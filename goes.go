@@ -77,7 +77,6 @@ import (
 	"github.com/platinasystems/goes/cmd/sleep"
 	"github.com/platinasystems/goes/cmd/source"
 	"github.com/platinasystems/goes/cmd/start"
-	"github.com/platinasystems/goes/cmd/status"
 	"github.com/platinasystems/goes/cmd/stop"
 	"github.com/platinasystems/goes/cmd/stty"
 	"github.com/platinasystems/goes/cmd/subscribe"
@@ -219,6 +218,7 @@ var Goes = &goes.Goes{
 				"log":       daemons.Log{},
 				"machine":   Machine,
 				"patents":   Patents,
+				"status":    status{},
 				"tech":      tech{},
 				"version":   &Version,
 			},
@@ -234,7 +234,7 @@ var Goes = &goes.Goes{
 			},
 		},
 		"stop":      &stop.Command{},
-		"status":    status.Command{},
+		"status":    status{},
 		"stty":      stty.Command{},
 		"subscribe": subscribe.Command{},
 		"sync":      sync.Command{},
