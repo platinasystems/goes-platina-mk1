@@ -11,7 +11,6 @@ import (
 	"time"
 
 	"github.com/platinasystems/goes"
-	"github.com/platinasystems/goes-platina-mk1/qsfp"
 	"github.com/platinasystems/goes/cmd"
 	"github.com/platinasystems/goes/cmd/bang"
 	"github.com/platinasystems/goes/cmd/biosupdate"
@@ -183,7 +182,6 @@ var Goes = &goes.Goes{
 		"ping":    ping.Command{},
 		"ps":      ps.Command{},
 		"pwd":     pwd.Command{},
-		"qsfp":    &qsfp.Command{},
 		"reboot":  reboot.Command{},
 		"redisd": &redisd.Command{
 			Devs:    []string{"lo", "eth0"},
