@@ -126,11 +126,10 @@ func (c tech) Main(args ...string) error {
 			args:  []string{"show", "buildid", vnetd},
 		},
 		{
-			level:  1,
-			key:    "version",
-			nested: true,
-			prog:   vnetd,
-			args:   []string{"-version"},
+			level: 1,
+			key:   "version",
+			prog:  vnetd,
+			args:  []string{"-version"},
 		},
 		{
 			key:    "platina-mk1.ko",
