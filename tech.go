@@ -47,11 +47,17 @@ type techEntry struct {
 
 func (c tech) Main(args ...string) error {
 	var (
+		verbose    = false
 		skipOnie   = true
 		skipRedis  = true
 		skipVnet   = true
 		skipStatus = os.Geteuid() != 0
 	)
+	for _, arg := range args {
+		if arg == "-v" || arg == "--verbose" || arg == "verbose" {
+			verbose = true
+		}
+	}
 	_, err := os.Stat("/sys/bus/i2c/devices/0-0051/onie")
 	if err == nil {
 		skipOnie = false
@@ -59,7 +65,7 @@ func (c tech) Main(args ...string) error {
 	data, err := ioutil.ReadFile("/proc/net/unix")
 	if err == nil {
 		if bytes.Index(data, []byte("@vnet\n")) > 0 {
-			skipVnet = false
+			skipVnet = !verbose
 		}
 		if bytes.Index(data, []byte("@redisd\n")) > 0 {
 			skipRedis = false
