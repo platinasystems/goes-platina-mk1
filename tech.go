@@ -22,7 +22,7 @@ type tech struct{}
 
 func (tech) String() string { return "tech" }
 
-func (tech) Usage() string { return "show tech[ support]" }
+func (tech) Usage() string { return "show tech [support] [-v]" }
 
 func (tech) Apropos() lang.Alt {
 	return lang.Alt{
