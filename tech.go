@@ -353,14 +353,14 @@ func (c tech) Main(args ...string) error {
 		},
 	} {
 		if !entry.skip {
-			c.show(w, &entry)
+			c.show(w, &entry, verbose)
 		}
 	}
 	fmt.Fprintln(w, "...")
 	return err
 }
 
-func (tech) show(w io.Writer, entry *techEntry) {
+func (tech) show(w io.Writer, entry *techEntry, verbose bool) {
 	indent := func() {}
 	if len(entry.key) > 0 {
 		for i := 0; i < entry.level; i++ {
@@ -396,12 +396,25 @@ func (tech) show(w io.Writer, entry *techEntry) {
 	pout, err := cmd.StdoutPipe()
 	if err == nil {
 		if err = cmd.Start(); err == nil {
+			var tail chan string
+			if entry.block && !verbose {
+				tail = make(chan string, 24)
+			}
 			scanner := bufio.NewScanner(pout)
 			for scanner.Scan() {
 				t := scanner.Text()
-				indent()
 				if entry.block {
-					fmt.Fprintln(w, t)
+					if tail != nil {
+						select {
+						case tail <- t:
+						default:
+							<-tail
+							tail <- t
+						}
+					} else {
+						indent()
+						fmt.Fprintln(w, t)
+					}
 				} else if entry.nested {
 					fields := strings.Fields(t)
 					if len(fields) == 1 {
@@ -409,13 +422,22 @@ func (tech) show(w io.Writer, entry *techEntry) {
 					} else {
 						t = strings.Join(fields, " ")
 					}
+					indent()
 					fmt.Fprintln(w, t)
 				} else if n == 0 {
+					indent()
 					fmt.Fprintln(w, t)
 				}
 				n += 1
 			}
 			err = cmd.Wait()
+			if tail != nil {
+				close(tail)
+				for t := range tail {
+					indent()
+					fmt.Fprintln(w, t)
+				}
+			}
 		}
 	}
 	if n == 0 {
