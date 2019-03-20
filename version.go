@@ -8,8 +8,8 @@ import (
 
 type version string
 
-// Version format :: v<MAJOR>.<MINOR>.<PATCH>[-rc<CANDIDATE>]
-var Version version = "v1.2.0-rc0"
+// Version format :: v<MAJOR>.<MINOR>.<PATCH>[-rc.<CANDIDATE>]
+var Version version = "v1.2.0"
 
 func (*version) String() string { return "version" }
 func (*version) Usage() string  { return "[show ]version" }
