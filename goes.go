@@ -257,7 +257,7 @@ var Goes = &goes.Goes{
 func platinaMk1EepromConfig() {
 	eeprom.Config(
 		eeprom.BusIndex(0),
-		eeprom.BusAddress(0x51),
+		eeprom.BusAddresses([]int{0x53, 0x51}),
 		eeprom.BusDelay(10*time.Millisecond),
 		eeprom.MinMacs(132),
 		eeprom.OUI([3]byte{0x02, 0x46, 0x8a}),
