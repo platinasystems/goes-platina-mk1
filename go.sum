@@ -2,6 +2,7 @@ docker.io/go-docker v1.0.0 h1:VdXS/aNYQxyA9wdLD5z8Q8Ro688/hG8HzKxYVEVbE6s=
 docker.io/go-docker v1.0.0/go.mod h1:7tiAn5a0LFmjbPDbyTPOaTTOuG1ZRNXdPA6RvKY+fpY=
 github.com/Microsoft/go-winio v0.4.11 h1:zoIOcVf0xPN1tnMVbTtEdI+P8OofVk3NObnwOQ6nK2Q=
 github.com/Microsoft/go-winio v0.4.11/go.mod h1:VhR8bwka0BXejwEJY73c50VrPtXAaKcyvVC4A4RozmA=
+github.com/anmitsu/go-shlex v0.0.0-20161002113705-648efa622239/go.mod h1:2FmKhYUyUczH0OGQWaF5ceTx0UBShxjsH6f8oGKYe2c=
 github.com/cavaliercoder/go-cpio v0.0.0-20180626203310-925f9528c45e/go.mod h1:oDpT4efm8tSYHXV5tHSdRvBet/b/QzxZ+XyyPehvm3A=
 github.com/cavaliercoder/grab v1.0.0 h1:H6VQ1NiLO7AvXM6ZyaInnoZrRLeo2FoUTQEcXln4bvQ=
 github.com/cavaliercoder/grab v1.0.0/go.mod h1:tTBkfNqSBfuMmMBFaO2phgyhdYhiZQ/+iXCZDzcDsMI=
@@ -9,6 +10,7 @@ github.com/d2g/dhcp4 v0.0.0-20170904100407-a1d1b6c41b1c/go.mod h1:Ct2BUK8SB0YC1S
 github.com/d2g/dhcp4client v0.0.0-20180622102533-b7a004ff1a09/go.mod h1:j0hNfjhrt2SxUOw55nL0ATM/z4Yt3t2Kd1mW34z5W5s=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
+github.com/djherbis/times v1.2.0/go.mod h1:CGMZlo255K5r4Yw0b9RRfFQpM2y7uOmxg4jm9HsaVf8=
 github.com/docker/distribution v2.6.2+incompatible h1:4FI6af79dfCS/CYb+RRtkSHw3q1L/bnDjG1PcPZtQhM=
 github.com/docker/distribution v2.6.2+incompatible/go.mod h1:J2gT2udsDAN96Uj4KfcMRqY0/ypR+oyYUYmja8H+y+w=
 github.com/docker/distribution v2.7.0-rc.0.0.20181002220433-1cb4180b1a5b+incompatible h1:n4a7qrsSAlu07ALkG84Ve8cmiDA2KDv2Zbf4OpsOcn8=
@@ -18,8 +20,10 @@ github.com/docker/go-connections v0.4.0 h1:El9xVISelRB7BuFusrZozjnkIM5YnzCViNKoh
 github.com/docker/go-connections v0.4.0/go.mod h1:Gbd7IOopHjR8Iph03tsViu4nIes5XhDvyHbTtUxmeec=
 github.com/docker/go-units v0.3.3 h1:Xk8S3Xj5sLGlG5g67hJmYMmUgXv5N4PhkjJHHqrwnTk=
 github.com/docker/go-units v0.3.3/go.mod h1:fgPhTUdO+D/Jk86RDLlptpiXQzgHJF7gydDDbaIK4Dk=
+github.com/flynn/go-shlex v0.0.0-20150515145356-3f9db97f8568/go.mod h1:xEzjJPgXI435gkrCt3MPfRiAkVrwSbHsst4LCFVfpJc=
 github.com/garyburd/redigo v1.6.0 h1:0VruCpn7yAIIu7pWVClQC8wxCJEcG3nyzpMSHKi1PQc=
 github.com/garyburd/redigo v1.6.0/go.mod h1:NR3MbYisc3/PwhQ00EMzDiPmrwpPxAn5GI05/YaO1SY=
+github.com/gliderlabs/ssh v0.1.3/go.mod h1:U7qILu1NlMHj9FlMhZLlkCdDnU1DBEAqr0aevW3Awn0=
 github.com/gogo/protobuf v1.1.1 h1:72R+M5VuhED/KujmZVcIquuo8mBgX4oVda//DQb3PXo=
 github.com/gogo/protobuf v1.1.1/go.mod h1:r8qH/GZQm5c6nD/R0oafs1akxWv10x8SbQlK7atdtwQ=
 github.com/gogo/protobuf v1.2.0/go.mod h1:r8qH/GZQm5c6nD/R0oafs1akxWv10x8SbQlK7atdtwQ=
@@ -33,6 +37,7 @@ github.com/opencontainers/go-digest v1.0.0-rc1 h1:WzifXhOVOEOuFYOJAW6aQqW0TooG2i
 github.com/opencontainers/go-digest v1.0.0-rc1/go.mod h1:cMLVZDEM3+U2I4VmLI6N8jQYUd2OVphdqWwCJHrFt2s=
 github.com/opencontainers/image-spec v1.0.1 h1:JMemWkRwHx4Zj+fVxWoMCFm/8sYGGrUVojFA6h/TRcI=
 github.com/opencontainers/image-spec v1.0.1/go.mod h1:BtxoFyWECRxE4U/7sNtV5W15zMzWCbyJoFRP3s7yZA0=
+github.com/paypal/gatt v0.0.0-20151011220935-4ae819d591cf/go.mod h1:+AwQL2mK3Pd3S+TUwg0tYQjid0q1txyNUJuuSmz8Kdk=
 github.com/pkg/errors v0.8.0 h1:WdK/asTD0HN+q6hsWO3/vpuAkAr+tw6aNJNDFFf0+qw=
 github.com/pkg/errors v0.8.0/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
@@ -48,6 +53,7 @@ github.com/platinasystems/dbg v0.0.0-20181012183359-440db521da7f h1:OiGCDI3wT7DW
 github.com/platinasystems/dbg v0.0.0-20181012183359-440db521da7f/go.mod h1:sWVDySjmyMRdh9RgbbJORw6A+xIBdAmoqOXBarhswZY=
 github.com/platinasystems/dbg v1.1.0 h1:W2ZNmbA7q68H82xCsMc2iy+BOHpqolKgRUlQL4IaDG0=
 github.com/platinasystems/dbg v1.1.0/go.mod h1:sWVDySjmyMRdh9RgbbJORw6A+xIBdAmoqOXBarhswZY=
+github.com/platinasystems/eeprom v1.0.0/go.mod h1:J5rWlxG4HFDqq5o1KE4n942Se7BwXDADl6H+r9OfX1I=
 github.com/platinasystems/elib v0.0.0-20181020233022-05b3cafd162e h1:u9wX32W3g2lbRsFYg0xDazkQlN5djlpp8MRlhvlO7is=
 github.com/platinasystems/elib v0.0.0-20181020233022-05b3cafd162e/go.mod h1:XZy8etdf41RtMxmxEYArLL7T6QEJ5MPAIeHDqXtPCUU=
 github.com/platinasystems/elib v1.1.0 h1:r8z1a/Wi9SlTBo9lRWSbl9yV1n0YJ011godG7cbNNJI=
@@ -66,6 +72,8 @@ github.com/platinasystems/firmware-fe1a v0.0.0-20181017185739-2d160f42cff1 h1:1r
 github.com/platinasystems/firmware-fe1a v0.0.0-20181017185739-2d160f42cff1/go.mod h1:F0KAFwctbk1FB557q7m6atg3aQgyHj9NmAle2KswM6E=
 github.com/platinasystems/firmware-fe1a v1.1.0 h1:4MW5FHQLIMPDkCWnmn3FZJ8Q3yZ1oSLaPxMq1DuvL6w=
 github.com/platinasystems/firmware-fe1a v1.1.0/go.mod h1:F0KAFwctbk1FB557q7m6atg3aQgyHj9NmAle2KswM6E=
+github.com/platinasystems/flags v1.0.0 h1:M+WtvQjx+ta36d908PDVUvamKnJR2ZXYkUx7OM+lhcg=
+github.com/platinasystems/flags v1.0.0/go.mod h1:3t8RybiABfJKBne5suYmfXoKOAK6bnMqr++fqaQ2V9M=
 github.com/platinasystems/go v0.0.0-20181022201609-1db6d19b343d h1:nBFGwGIhD3m1FT8aO4cY2IiQfbQeKaBxKAP4XcO5UT8=
 github.com/platinasystems/go v0.0.0-20181022201609-1db6d19b343d/go.mod h1:J9QG7kZEw0Pw/zyd2ihyOzCOuifkDeEpCaZjYu0atyk=
 github.com/platinasystems/go v0.0.0-20181023181126-ab63e45d9014 h1:Eon5lKAyRb7jfGfLm1Ox/vIa/mxgXmRRgHDxmKfCTYA=
@@ -122,6 +130,8 @@ github.com/platinasystems/goes v1.4.3 h1:RXGq+YEHwK/GHIn2r8jhhJ8BfVARimFm1/PmRQt
 github.com/platinasystems/goes v1.4.3/go.mod h1:ddu7eH3ThDVMlIrVxqXDHLbV/xmm8FogSjjPIkC/QvI=
 github.com/platinasystems/goes v1.4.5 h1:9oBqnNyvjg75f9HpFrlEju7RY3PWUPe4lEdv+j6OQZU=
 github.com/platinasystems/goes v1.4.5/go.mod h1:nBcq2/YA1mAskOwhmY3HZKFkYr+qkUBayhaZZmKX1Qk=
+github.com/platinasystems/goes v1.6.2 h1:pQAsF41ZyDuk+RWMhGdTTU0x9dmQ4QB3k9M0mOYW6PQ=
+github.com/platinasystems/goes v1.6.2/go.mod h1:OaIXukGH0248hTEBuQsJfrWeClkfBTWtu0aGskMhf5A=
 github.com/platinasystems/gpio v0.0.0-20181120172958-aa9a44e83566 h1:K+WxE4dE01A4ZagXVNHd81J6PBubuP7r/2nNzqhkRTs=
 github.com/platinasystems/gpio v0.0.0-20181120172958-aa9a44e83566/go.mod h1:UsR1pB6U/S7Ql6RDrF/S6rMJqWOiZu3H2mKQeEe4v7U=
 github.com/platinasystems/i2c v0.0.0-20181019213407-8214913e67af h1:bHZ3RKuiaglPYzAqoGD2zheO9JIs4OA22CqdxZ6I/mQ=
@@ -144,12 +154,19 @@ github.com/platinasystems/log v1.2.1 h1:a43xeRp+KouaPlVTfOdeI2vNj755PBf8ovKEAMT8
 github.com/platinasystems/log v1.2.1/go.mod h1:5Wjp9vxMfkZGWz2Ep3ghzsfarcs9MMfiE2RzKwseyKQ=
 github.com/platinasystems/memio v0.0.0-20181109233200-08a432045d57 h1:aXCGfZLnvW0ffPXgYB4yJumQGDvq2z8e8vxlVnGVdy8=
 github.com/platinasystems/memio v0.0.0-20181109233200-08a432045d57/go.mod h1:5432a+C/LwmCPg543MFUCCzgTaEpAURrTC01os0/8k8=
+github.com/platinasystems/parms v1.0.0 h1:pLTnredJUqeet4KoylUe+VVkX/geFORdstHLdZgwSmo=
+github.com/platinasystems/parms v1.0.0/go.mod h1:PBi8SO7fo+s+qLsAHH3QAqAPzO2dLHWca/DM+2vKPn0=
 github.com/platinasystems/redis v0.0.0-20181022194819-47dc1dbf4623 h1:i5BOdwsFo16Srld2T06G4G+zXngakusLxmpLHzomy1k=
 github.com/platinasystems/redis v0.0.0-20181022194819-47dc1dbf4623/go.mod h1:lyuhkHpfn6y21/nMn7H6pbBuPk1D8pflwsatn4OIl8M=
 github.com/platinasystems/redis v1.1.0 h1:LjQDzR4Y3oZ21a2k+JQjhw2SpdYXwhbJa80JjkLvzJc=
 github.com/platinasystems/redis v1.1.0/go.mod h1:lyuhkHpfn6y21/nMn7H6pbBuPk1D8pflwsatn4OIl8M=
 github.com/platinasystems/redis v1.2.0 h1:Pyoc4Jkl/CfQn44XxpBB4ND4ciU4T9cSfp3xmCaJG+A=
 github.com/platinasystems/redis v1.2.0/go.mod h1:lyuhkHpfn6y21/nMn7H6pbBuPk1D8pflwsatn4OIl8M=
+github.com/platinasystems/tftp v1.0.0 h1:wUv+nFUwntLddYGa3Y5Zr3TUQ4rtQXGebG0ZOutVyIw=
+github.com/platinasystems/tftp v1.0.0/go.mod h1:RUhAd8ADNPAQmoiSbjo4aDFAOBjz7kC1FkDAmuEd9J0=
+github.com/platinasystems/ubi v0.0.1/go.mod h1:CaWlufzEkyJ+hYSyu8/8pwY+9JYZZh8/1XRyfTU8EuU=
+github.com/platinasystems/url v1.0.0 h1:T2GuEIydvkZCpbU4DlTVyRdYoM5gn9MQNRGOObDg574=
+github.com/platinasystems/url v1.0.0/go.mod h1:tjHiLHUR+Jasu091bzwk/SAHkgEuO8ohYmi4XTszV2Y=
 github.com/platinasystems/vnet v0.0.0-20181022195906-30b95e90506f h1:yQJDZ2G6xZIg9L+yAyI/5OQhl1kThr4vn/ygHeMVfHA=
 github.com/platinasystems/vnet v0.0.0-20181022195906-30b95e90506f/go.mod h1:dXSEzxo24LSBv1S1H+jH7oDiO3dTTT9QMc5OsNSy7TM=
 github.com/platinasystems/vnet v1.1.0 h1:NP0WZHEf4OGofQqcl0IHBOmk8MxgMZXG2if8gRTBhSw=
@@ -174,6 +191,7 @@ github.com/stretchr/testify v1.2.2 h1:bSDNvY7ZPG5RlJ8otE/7V6gMiyenm9RtJ7IUVIAoJ1
 github.com/stretchr/testify v1.2.2/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
 github.com/tatsushid/go-fastping v0.0.0-20160109021039-d7bb493dee3e h1:nt2877sKfojlHCTOBXbpWjBkuWKritFaGIfgQwbQUls=
 github.com/tatsushid/go-fastping v0.0.0-20160109021039-d7bb493dee3e/go.mod h1:B4+Kq1u5FlULTjFSM707Q6e/cOHFv0z/6QRoxubDIQ8=
+golang.org/x/crypto v0.0.0-20190417174047-f416ebab96af/go.mod h1:WFFai1msRO1wXaEeE5yQxYXgSfI8pQAWXbQop6sCtWE=
 golang.org/x/net v0.0.0-20181011144130-49bb7cea24b1 h1:Y/KGZSOdz/2r0WJ9Mkmz6NJBusp0kiNx1Cn82lzJQ6w=
 golang.org/x/net v0.0.0-20181011144130-49bb7cea24b1/go.mod h1:mL1N/T3taQHkDXs73rZJwtUhF3w3ftmwwsq0BUmARs4=
 golang.org/x/net v0.0.0-20181023162649-9b4f9f5ad519 h1:x6rhz8Y9CjbgQkccRGmELH6K+LJj7tOoh3XWeC1yaQM=
@@ -183,6 +201,7 @@ golang.org/x/net v0.0.0-20181108082009-03003ca0c849/go.mod h1:mL1N/T3taQHkDXs73r
 golang.org/x/sys v0.0.0-20181011152604-fa43e7bc11ba h1:nZJIJPGow0Kf9bU9QTc1U6OXbs/7Hu4e+cNv+hxH+Zc=
 golang.org/x/sys v0.0.0-20181011152604-fa43e7bc11ba/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
 golang.org/x/sys v0.0.0-20181107165924-66b7b1311ac8/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
+golang.org/x/sys v0.0.0-20190403152447-81d4e9dc473e/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405 h1:yhCVgyC4o1eVCa2tZl7eS0r+SDo693bJlVdllGtEeKM=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
 gopkg.in/yaml.v2 v2.2.1 h1:mUhvW9EsL+naU5Q3cakzfE91YhliOondGd6ZrsDBHQE=
