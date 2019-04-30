@@ -1,25 +1,25 @@
 This is a GO Embedded System for Platina Systems' *mark 1* packet switches.
 
-To build this source you'll first need to extract the driver from an
+To build this from source you'll first need to extract the driver from an
 existing program binary.
 
 ```console
 $ unzip goes-platina-mk1 vnet-platina-mk1
-$ zip drivers.zip vnet-platina-mk1
+$ zip drivers vnet-platina-mk1
 ```
 
 Or with NDA access to the driver source, build it with,
 
 ```console
-$ go build github.com/platinasystems/vnet-platina-mk1
-$ zip drivers.zip vnet-platina-mk1
+$ go get github.com/platinasystems/vnet-platina-mk1@VERSION
+$ zip -j drivers $GOPATH/bin/vnet-platina-mk1
 ```
 
-Then build the program and append the zipped plugin.
+Then build the goes program and append the zipped plugin.
 
 ```console
-$ go build
-$ cat drivers.zip >> goes-platina-mk1
+$ go get github.com/platinasystems/goes-platina-mk1@VERSION
+$ cat $GOPATH/bin/goes-platina-mk1 drivers.zip >> goes-platina-mk1
 $ zip -q -A goes-platina-mk1
 ```
 
