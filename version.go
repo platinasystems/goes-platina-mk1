@@ -9,7 +9,7 @@ import (
 type version string
 
 // Version format :: v<MAJOR>.<MINOR>.<PATCH>[-rc.<CANDIDATE>]
-var Version version = "v1.2.0"
+var Version version = "v1.2.1-rc.1"
 
 func (*version) String() string { return "version" }
 func (*version) Usage() string  { return "[show ]version" }
