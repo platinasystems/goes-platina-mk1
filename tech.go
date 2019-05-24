@@ -114,8 +114,10 @@ func (c tech) Main(args ...string) error {
 		},
 		{
 			level: 1,
-			key:   "version",
-			args:  []string{string(Version)},
+			key:   "buildinfo",
+			block: true,
+			prog:  self,
+			args:  []string{"show", "buildinfo"},
 		},
 		{
 			key: string(Vnetd),
@@ -133,9 +135,10 @@ func (c tech) Main(args ...string) error {
 		},
 		{
 			level: 1,
-			key:   "version",
+			key:   "buildinfo",
+			block: true,
 			prog:  vnetd,
-			args:  []string{"-version"},
+			args:  []string{"show", "buildinfo"},
 		},
 		{
 			key:    "platina-mk1.ko",

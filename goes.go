@@ -15,6 +15,7 @@ import (
 	"github.com/platinasystems/goes/cmd/bang"
 	"github.com/platinasystems/goes/cmd/biosupdate"
 	"github.com/platinasystems/goes/cmd/buildid"
+	"github.com/platinasystems/goes/cmd/buildinfo"
 	"github.com/platinasystems/goes/cmd/cat"
 	"github.com/platinasystems/goes/cmd/cd"
 	"github.com/platinasystems/goes/cmd/chmod"
@@ -86,6 +87,7 @@ import (
 	"github.com/platinasystems/goes/cmd/umount"
 	"github.com/platinasystems/goes/cmd/uninstall"
 	"github.com/platinasystems/goes/cmd/uptimed"
+	"github.com/platinasystems/goes/cmd/version"
 	"github.com/platinasystems/goes/cmd/wget"
 	"github.com/platinasystems/goes/lang"
 	"github.com/platinasystems/redis"
@@ -127,6 +129,7 @@ var Goes = &goes.Goes{
 		"biosupdate": biosupdate.Command{},
 		"bootc":      &bootc.Command{},
 		"buildid":    buildid.Command{},
+		"buildinfo":  buildinfo.Command{},
 		"cat":        cat.Command{},
 		"cd":         &cd.Command{},
 		"chmod":      chmod.Command{},
@@ -208,6 +211,7 @@ var Goes = &goes.Goes{
 			},
 			ByName: map[string]cmd.Cmd{
 				"buildid":   buildid.Command{},
+				"buildinfo": buildinfo.Command{},
 				"cmdline":   cmdline.Command{},
 				"copyright": License,
 				"daemons":   daemons.Status{},
@@ -218,7 +222,7 @@ var Goes = &goes.Goes{
 				"patents":   Patents,
 				"status":    status{},
 				"tech":      tech{},
-				"version":   &Version,
+				"version":   version.Command{},
 			},
 		},
 		"/init":  &slashinit.Command{},
@@ -245,9 +249,9 @@ var Goes = &goes.Goes{
 		"uninstall": &uninstall.Command{},
 		"upgrade":   upgrade.Command{},
 		"uptimed":   uptimed.Command(make(chan struct{})),
-		"-version":  &Version,
-		"--version": &Version,
-		"version":   &Version,
+		"-version":  version.Command{},
+		"--version": version.Command{},
+		"version":   version.Command{},
 		"vnet":      vnetCommand{},
 		"vnetd":     Vnetd,
 		"wget":      wget.Command{},
