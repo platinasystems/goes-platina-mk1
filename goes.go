@@ -61,6 +61,7 @@ import (
 	"github.com/platinasystems/goes/cmd/mkdir"
 	"github.com/platinasystems/goes/cmd/mknod"
 	"github.com/platinasystems/goes/cmd/mount"
+	"github.com/platinasystems/goes/cmd/nvramtool"
 	"github.com/platinasystems/goes/cmd/ping"
 	"github.com/platinasystems/goes/cmd/platina/mk1/bootc"
 	"github.com/platinasystems/goes/cmd/platina/mk1/toggle"
@@ -182,6 +183,7 @@ var Goes = &goes.Goes{
 		"mac-ll":  mac_ll.Command{},
 		"mount":   mount.Command{},
 		"patents": Patents,
+		"nvramtool": nvramtool.Command{},
 		"ping":    ping.Command{},
 		"ps":      ps.Command{},
 		"pwd":     pwd.Command{},
