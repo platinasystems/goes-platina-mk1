@@ -30,8 +30,8 @@ github.com/platinasystems/flags v1.0.0 h1:M+WtvQjx+ta36d908PDVUvamKnJR2ZXYkUx7OM
 github.com/platinasystems/flags v1.0.0/go.mod h1:3t8RybiABfJKBne5suYmfXoKOAK6bnMqr++fqaQ2V9M=
 github.com/platinasystems/go-redis-server v0.0.0-20181030193423-fcb8fa742b73 h1:8DVy1rcSWTnJt248DAD0JzeASS3j8Ljg+rCoKPHW5Qo=
 github.com/platinasystems/go-redis-server v0.0.0-20181030193423-fcb8fa742b73/go.mod h1:/GXF5FQty+9BTtfCsfFuD4/pHf/b2cN3f3Ic0nLagQw=
-github.com/platinasystems/goes v1.10.1 h1:feIuTn5R950y3qhMuynl1HcBnfCrkSRoKbquJ/C4Wuw=
-github.com/platinasystems/goes v1.10.1/go.mod h1:dJGtupCfWmlaqHvJyeHfGUj5NHf1UFy/IBb1w+UN9/0=
+github.com/platinasystems/goes v1.10.2 h1:kjNgJmxrbJJy4jfFP+1T/VSDTOj4AtLgGGs0Y+PzYTE=
+github.com/platinasystems/goes v1.10.2/go.mod h1:dJGtupCfWmlaqHvJyeHfGUj5NHf1UFy/IBb1w+UN9/0=
 github.com/platinasystems/gpio v0.0.0-20181120172958-aa9a44e83566 h1:K+WxE4dE01A4ZagXVNHd81J6PBubuP7r/2nNzqhkRTs=
 github.com/platinasystems/gpio v0.0.0-20181120172958-aa9a44e83566/go.mod h1:UsR1pB6U/S7Ql6RDrF/S6rMJqWOiZu3H2mKQeEe4v7U=
 github.com/platinasystems/i2c v1.2.0 h1:H1BgNrz4s15AcR6Y4WxZS+eMgX00pu8ZoLfVHb5VoIw=
@@ -44,6 +44,8 @@ github.com/platinasystems/log v1.2.1/go.mod h1:5Wjp9vxMfkZGWz2Ep3ghzsfarcs9MMfiE
 github.com/platinasystems/loopback v0.0.2/go.mod h1:L363iEtOA7dYJkxGa0b81/0hiSY34/H084Kben/DDRA=
 github.com/platinasystems/memio v0.0.0-20181109233200-08a432045d57 h1:aXCGfZLnvW0ffPXgYB4yJumQGDvq2z8e8vxlVnGVdy8=
 github.com/platinasystems/memio v0.0.0-20181109233200-08a432045d57/go.mod h1:5432a+C/LwmCPg543MFUCCzgTaEpAURrTC01os0/8k8=
+github.com/platinasystems/nvram v1.0.0 h1:gveKnSC0+1pC/7L+6MQNLZoHp92SFQVbfsqj9hgWhGM=
+github.com/platinasystems/nvram v1.0.0/go.mod h1:00d+9njUcsmFqRNdpmpoY1m5YihPUrQ9mNr9K4BqoEA=
 github.com/platinasystems/parms v1.0.0 h1:pLTnredJUqeet4KoylUe+VVkX/geFORdstHLdZgwSmo=
 github.com/platinasystems/parms v1.0.0/go.mod h1:PBi8SO7fo+s+qLsAHH3QAqAPzO2dLHWca/DM+2vKPn0=
 github.com/platinasystems/redis v1.2.0 h1:Pyoc4Jkl/CfQn44XxpBB4ND4ciU4T9cSfp3xmCaJG+A=
