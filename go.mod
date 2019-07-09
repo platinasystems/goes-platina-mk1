@@ -6,3 +6,5 @@ require (
 	github.com/platinasystems/nvram v1.0.0
 	github.com/platinasystems/redis v1.2.0
 )
+
+replace github.com/platinasystems/goes => github.com/mperretta1/goes v1.10.2-0.20190627210216-702ccd433e4a
