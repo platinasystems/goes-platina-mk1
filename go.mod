@@ -7,4 +7,4 @@ require (
 	github.com/platinasystems/redis v1.2.0
 )
 
-replace github.com/platinasystems/goes => github.com/mperretta1/goes v1.10.2-0.20190627210216-702ccd433e4a
+replace github.com/platinasystems/goes => github.com/mperretta1/goes v1.10.2-0.20190709233536-dd6b678575b5

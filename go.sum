@@ -15,6 +15,8 @@ github.com/mattn/go-isatty v0.0.4 h1:bnP0vzxcAdeI1zdubAl5PjU6zsERjGZb7raWodagDYs
 github.com/mattn/go-isatty v0.0.4/go.mod h1:M+lRXTBqGeGNdLjl/ufCoiOlB5xdOkqRJdNxMWT7Zi4=
 github.com/mperretta1/goes v1.10.2-0.20190627210216-702ccd433e4a h1:naG+saFHcCNRfpfC1cYW9p8uc3vZcvumOIV/3f1jHw4=
 github.com/mperretta1/goes v1.10.2-0.20190627210216-702ccd433e4a/go.mod h1:dJGtupCfWmlaqHvJyeHfGUj5NHf1UFy/IBb1w+UN9/0=
+github.com/mperretta1/goes v1.10.2-0.20190709233536-dd6b678575b5 h1:uKrhyp9Kmdy2UAGvPav8u46dGVLd/fA+byS4sR0D1Ao=
+github.com/mperretta1/goes v1.10.2-0.20190709233536-dd6b678575b5/go.mod h1:dJGtupCfWmlaqHvJyeHfGUj5NHf1UFy/IBb1w+UN9/0=
 github.com/paypal/gatt v0.0.0-20151011220935-4ae819d591cf/go.mod h1:+AwQL2mK3Pd3S+TUwg0tYQjid0q1txyNUJuuSmz8Kdk=
 github.com/platinasystems/accumulate v0.0.0-20181019183040-63617d15f799 h1:HpgzjOFv5du0h9udWjDgx4t/4KszyyJByKAkIvjl4qw=
 github.com/platinasystems/accumulate v0.0.0-20181019183040-63617d15f799/go.mod h1:lc7wpU1G++0lunURQyH853Y77bwWr0hXPiLLeaxjGIY=
